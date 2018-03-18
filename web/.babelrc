@@ -1,0 +1,4 @@
+{
+  "presets": ["next/babel","react-native"],
+  "plugins": ["react-native-web", "babel-plugin-react-native-web"]
+}
