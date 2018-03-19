@@ -23,7 +23,7 @@ const babelLoaderConfiguration = {
       // Babel configuration (or use .babelrc)
       // This aliases 'react-native' to 'react-native-web' and includes only
       // the modules needed by the app.
-      plugins: ['react-native-web'],
+      plugins: ['react-native-web', 'babel-plugin-react-native-web'],
       // The 'react-native' preset is recommended to match React Native's packager
       presets: ['react-native']
     }
@@ -33,22 +33,31 @@ const babelLoaderConfiguration = {
 // This is needed for webpack to import static images in JavaScript files.
 const imageLoaderConfiguration = {
   test: /\.(gif|jpe?g|png|svg)$/,
+  include: [
+    path.resolve(appDirectory, 'App'),
+  ],
   use: {
-    loader: 'url-loader',
+    loader: 'file-loader',
     options: {
-      name: '[name].[ext]'
+      name: 'images/[name].[ext]',
     }
   }
 };
 
 module.exports = {
+  devServer: {
+    publicPath: '/',
+    port: 3000,
+    contentBase: path.join(__dirname, 'dist')
+  },
+
   // your web-specific entry file
   entry: path.resolve(appDirectory, 'index.web.js'),
 
   // configures where the build ends up
   output: {
     filename: 'bundle.web.js',
-    path: path.resolve(appDirectory, 'web/dist')
+    path: path.join(__dirname, 'dist')
   },
 
   // ...the rest of your config

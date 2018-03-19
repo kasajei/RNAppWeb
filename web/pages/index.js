@@ -13,8 +13,12 @@ const styles = StyleSheet.create({
   }
 })
 
-export default props => (
-  <View style={styles.container}>
-    <Text style={styles.text}>Welcome to Next.js!</Text>
-  </View>
-)
+export default class LaunchScreen extends React.Component {
+  render(){
+    return(
+      <View style={styles.container}>
+        <Text style={styles.text}>Welcome to Next.js!</Text>
+      </View>    
+    )
+  }
+}

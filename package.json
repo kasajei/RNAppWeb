@@ -25,7 +25,7 @@
     "next:dev": "cd web && next",
     "next:build": "cd web && next build",
     "next:start": "cd web && next start",
-    "webpack:develop": "webpack --mode development --config web/webpack.config.js",
+    "webpack:dev": "webpack-dev-server -d  --mode development --config web/webpack.config.js --inline --hot --colors",
     "webpack:build": "webpack --mode production --config web/webpack.config.js"
   },
   "dependencies": {
@@ -64,6 +64,7 @@
     "babel-preset-react-native": "^3.0.2",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "file-loader": "^1.1.11",
     "husky": "^0.14.3",
     "ignite-ir-boilerplate": "^2.3.1",
     "ignite-redux-persist": "^1.1.0",
@@ -77,6 +78,7 @@
     "reactotron-redux-saga": "^1.13.0",
     "snazzy": "^7.1.1",
     "standard": "10.0.2",
+    "url-loader": "^1.0.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
