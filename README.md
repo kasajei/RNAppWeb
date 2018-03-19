@@ -23,4 +23,4 @@
     * run `react-native run-android`
   * for Web
     * Next.js : run `npm run next:dev`
-    * Webpack : run `npm run webpack:develop`
+    * Webpack : run `npm run webpack:dev`
