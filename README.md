@@ -1,7 +1,10 @@
 #  RNAppWeb
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+**You need to edit just one file for Web and App!**
+
+[![https://gyazo.com/3eea495f4429b01660221ab3ee676db1](https://i.gyazo.com/3eea495f4429b01660221ab3ee676db1.gif)](https://gyazo.com/3eea495f4429b01660221ab3ee676db1)
+
+
 
 ## :arrow_up: How to Setup
 

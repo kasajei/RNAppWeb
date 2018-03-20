@@ -23,7 +23,7 @@ const babelLoaderConfiguration = {
       // Babel configuration (or use .babelrc)
       // This aliases 'react-native' to 'react-native-web' and includes only
       // the modules needed by the app.
-      plugins: ['react-native-web', 'babel-plugin-react-native-web'],
+      plugins: ['react-native-web', 'babel-plugin-react-native-web', 'babel-plugin-transform-runtime'],
       // The 'react-native' preset is recommended to match React Native's packager
       presets: ['react-native']
     }
