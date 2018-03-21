@@ -36,5 +36,4 @@ And it seems to be different between `react-native` and `react-native-web` desig
     * Run Genymotion
     * run `react-native run-android`
   * for Web
-    * Next.js : run `npm run next:dev`
     * Webpack : run `npm run webpack:dev`
