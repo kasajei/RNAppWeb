@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { ScrollView, Text, Image, View, Button, Platform } from 'react-native'
 import { Images } from '../Themes'
 
 // Styles
@@ -19,8 +19,18 @@ export default class LaunchScreen extends Component {
             <Text style={styles.sectionText}>
             Hello World
             </Text>
+            <Button
+              title="Learn More"
+              color="#841584"
+              onPress={()=>{
+                if (Platform.OS == "web"){
+                  this.props.history.push("/about")
+                }else{
+                  this.props.navigation.navigate("AboutScreen")
+                }
+              }}
+            />
           </View>
-
         </ScrollView>
       </View>
     )
