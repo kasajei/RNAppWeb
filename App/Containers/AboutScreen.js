@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, KeyboardAvoidingView, View, Button, Platform } from 'react-native'
 import { connect } from 'react-redux'
+import { Colors } from '../Themes'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -14,10 +15,9 @@ class AboutScreen extends Component {
         <View style={styles.container}>
         <View style={styles.section} >
           <KeyboardAvoidingView behavior='position'>
-            <Text style={styles.sectionText}>AboutScreen</Text>
             <Button
                 title="Go Back"
-                color="#841584"
+                color={Colors.charcoal}
                 onPress={()=>{
                   if (Platform.OS == "web"){
                     this.props.history.goBack()
@@ -26,6 +26,7 @@ class AboutScreen extends Component {
                   }
                 }}
               />
+            <Text style={styles.sectionText}>AboutScreen</Text>
           </KeyboardAvoidingView>
           </View>
         </View>
