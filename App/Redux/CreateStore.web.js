@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import Config from '../Config/DebugConfig'
 import createSagaMiddleware from 'redux-saga'
+import { routerMiddleware } from 'react-router-redux'
+
 
 // creates the store
-export default (rootReducer, rootSaga) => {
+export default (rootReducer, rootSaga, history) => {
   /* ------------- Redux Configuration ------------- */
 
   const middleware = []
@@ -13,6 +15,10 @@ export default (rootReducer, rootSaga) => {
 
   const sagaMiddleware = createSagaMiddleware({})
   middleware.push(sagaMiddleware)
+
+  /* ------------- Router Middleware ------------- */
+
+  middleware.push(routerMiddleware(history))
 
   /* ------------- Assemble Middleware ------------- */
 

@@ -9,10 +9,10 @@ export const reducers = combineReducers({
   search: require('./SearchRedux').reducer
 })
 
-export default () => {
+export default (history) => {
   let finalReducers = reducers
   // If rehydration is on use persistReducer otherwise default combineReducers
-  let { store, sagasManager, sagaMiddleware } = configureStore(finalReducers, rootSaga)
+  let { store, sagasManager, sagaMiddleware } = configureStore(finalReducers, rootSaga, history)
 
   if (module.hot) {
     module.hot.accept(() => {

@@ -31,6 +31,7 @@
   "dependencies": {
     "apisauce": "^0.14.2",
     "format-json": "^1.0.3",
+    "history": "^4.7.2",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.4",
     "next": "^5.0.1-canary.16",
@@ -44,6 +45,9 @@
     "react-navigation": "^1.0.0-beta.21",
     "react-navigation-redux-helpers": "^1.0.3",
     "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-persist": "^5.4.0",
     "redux-saga": "^0.16.0",

@@ -2,12 +2,14 @@ import DebugConfig from '../Config/DebugConfig'
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { View, Text } from 'react-native'
-// import RootContainer from './RootContainer'
-import LaunchScreen from '../Containers/LaunchScreen'
-import createStore from '../Redux'
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import RootContainer from './RootContainer'
+import createHistory from 'history/createBrowserHistory'
+const history = createHistory()
 
-// create our store
-const store = createStore()
+
+import createStore from '../Redux'
+const store = createStore(history)
 
 /**
  * Provides an entry point into our application.  Both index.ios.js and index.android.js
@@ -22,7 +24,9 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <LaunchScreen/>
+        <ConnectedRouter history={history}>
+          <RootContainer/>
+        </ConnectedRouter>
       </Provider>
     )
   }
