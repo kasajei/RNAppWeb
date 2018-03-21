@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, Image, View, Button, Platform } from 'react-native'
-import { Images } from '../Themes'
+import { Images, Colors } from '../Themes'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
@@ -20,8 +20,19 @@ export default class LaunchScreen extends Component {
             Hello World
             </Text>
             <Button
+              title="ToDo"
+              color={Colors.fire}
+              onPress={()=>{
+                if (Platform.OS == "web"){
+                  this.props.history.push("/todo")
+                }else{
+                  this.props.navigation.navigate("TodoScreen")
+                }
+              }}
+            />
+            <Button
               title="Learn More"
-              color="#841584"
+              color={Colors.charcoal}
               onPress={()=>{
                 if (Platform.OS == "web"){
                   this.props.history.push("/about")

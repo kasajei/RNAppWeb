@@ -37,3 +37,8 @@ And it seems to be different between `react-native` and `react-native-web` desig
     * run `react-native run-android`
   * for Web
     * Webpack : run `npm run webpack:dev`
+
+
+## Test
+
+1. `npm run test:watch TodoReduxTest`

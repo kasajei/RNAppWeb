@@ -7,6 +7,7 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 
 import LaunchScreen from '../Containers/LaunchScreen'
 import AboutScreen from '../Containers/AboutScreen'
+import TodoScreen from '../Containers/TodoScreen'
 import styles from './Styles/RootContainerStyles'
 
 
@@ -25,6 +26,7 @@ class App extends Component {
           <View style={styles.applicationView}>
             <Route exact path="/" component={LaunchScreen}/>
             <Route path="/about" component={AboutScreen}/>
+            <Route path="/todo" component={TodoScreen}/>
           </View>
         </ConnectedRouter>
       </Provider>

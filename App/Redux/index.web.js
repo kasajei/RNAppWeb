@@ -6,12 +6,15 @@ import rootSaga from '../Sagas/'
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
   github: require('./GithubRedux').reducer,
-  search: require('./SearchRedux').reducer
+  search: require('./SearchRedux').reducer,
+  todo: require('./TodoRedux').reducer,
 })
 
 export default (history) => {
   let finalReducers = reducers
   // If rehydration is on use persistReducer otherwise default combineReducers
+  // TODO: redux-persist config
+
   let { store, sagasManager, sagaMiddleware } = configureStore(finalReducers, rootSaga, history)
 
   if (module.hot) {
