@@ -48,7 +48,8 @@ module.exports = {
   devServer: {
     publicPath: '/',
     port: 3000,
-    contentBase: path.join(__dirname, 'dist')
+    contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true,
   },
 
   // your web-specific entry file
