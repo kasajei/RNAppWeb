@@ -16,6 +16,11 @@ And it seems to be different between `react-native` and `react-native-web` desig
 
 `react-primitives` is a library for creating shared components on `react-native`, `react-native-web`, `react-sketchapp`.
 
+**Redux work**
+
+[![https://gyazo.com/9b1b3dcb9d5204d742755be2ec2c5cd6](https://i.gyazo.com/9b1b3dcb9d5204d742755be2ec2c5cd6.gif)](https://gyazo.com/9b1b3dcb9d5204d742755be2ec2c5cd6)
+
+These also are different design between App and Web because of `react-native` and `react-native-web` components differances.
 
 ## :arrow_up: How to Setup
 
@@ -41,4 +46,4 @@ And it seems to be different between `react-native` and `react-native-web` desig
 
 ## Test
 
-1. `npm run test:watch TodoReduxTest`
+* `npm run test:watch TodoReduxTest`

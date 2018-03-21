@@ -15,6 +15,7 @@ class AboutScreen extends Component {
         <View style={styles.container}>
         <View style={styles.section} >
           <KeyboardAvoidingView behavior='position'>
+            <Text style={styles.sectionText}>AboutScreen</Text>
             <Button
                 title="Go Back"
                 color={Colors.charcoal}
@@ -26,7 +27,6 @@ class AboutScreen extends Component {
                   }
                 }}
               />
-            <Text style={styles.sectionText}>AboutScreen</Text>
           </KeyboardAvoidingView>
           </View>
         </View>

@@ -22,7 +22,9 @@ const colors = {
   border: '#483F53',
   banner: '#5F3E63',
   text: '#E0D7E5',
-  blue: '',
+  blue: "#3498db",
+  purple: "#9b59b6",
+  green: "#1abc9c",
 }
 
 export default colors

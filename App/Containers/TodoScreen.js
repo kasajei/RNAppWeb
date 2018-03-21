@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, KeyboardAvoidingView, View, Platform, Button } from 'react-native'
+import { ScrollView, Text, KeyboardAvoidingView, View, Platform, Button, TextInput } from 'react-native'
 import {Colors, Metrics} from '../Themes'
 import { connect } from 'react-redux'
 import TodoActions from '../Redux/TodoRedux'
@@ -29,7 +29,7 @@ class TodoScreen extends Component {
 
   mapToDataProvider(props){
     let dataProvider = new DataProvider((r1, r2) => {
-      return r1.id !== r2.id;
+      return r1.id !== r2.id || r1.title !== r2.title || r1.is_complete !== r2.is_complete;
     });
     return dataProvider.cloneWithRows(
       Object.keys(props.todos).reduce((pre, value)=>{
@@ -43,10 +43,35 @@ class TodoScreen extends Component {
     this.setState({dataProvider:this.mapToDataProvider(nextProps)}) 
   }
 
-  _rowRenderer(type, data) {
+  rowRenderer(type, data) {
     return (
         <View >
-            <Text style={styles.sectionText}>{data.title}</Text>
+            {/* <Text style={styles.sectionText}>{data.title}</Text> */}
+            <View style={styles.groupContainer}>
+              <Button
+                  title="✓"
+                  color={data.is_complete?Colors.green:Colors.charcoal}
+                  onPress={()=>{
+                    this.props.todoChange(data.id, {is_complete:!data.is_complete})
+                  }}
+                />
+              <TextInput
+                style={styles.cellContainer}
+                placeholderTextColor={Colors.charcoal}
+                placeholder="Task Name Here"
+                onChangeText={(text) => {
+                  this.props.todoChange(data.id, {title:text})
+                }}
+                value={data.title}
+              />
+              <Button
+                  title="✖"
+                  color={Colors.fire}
+                  onPress={()=>{
+                    this.props.todoDelete(data.id)
+                  }}
+                />
+            </View>
         </View>
     );
   }
@@ -58,31 +83,33 @@ class TodoScreen extends Component {
         <View style={styles.container}>
         <View style={styles.section} >
           <KeyboardAvoidingView behavior='position'>
-            <Button
-                title="Go Back"
-                color={Colors.charcoal}
-                onPress={()=>{
-                  if (Platform.OS == "web"){
-                    this.props.history.goBack()
-                  }else{
-                    this.props.navigation.goBack()
-                  }
-                }}
-              />
             <Text style={styles.sectionText}>TodoScreen</Text>
             <Button
                 title="Add Task"
                 color={Colors.fire}
                 onPress={()=>{
-                  this.props.todoAdd("Test Todo")
+                  this.props.todoAdd()
                 }}
               />
           </KeyboardAvoidingView>
+        </View>
+        <RecyclerListView 
+          layoutProvider={this._layoutProvider} 
+          dataProvider={this.state.dataProvider} 
+          rowRenderer={this.rowRenderer.bind(this)} />
+        <View style={styles.section} >
+          <Button
+              title="Go Back"
+              color={Colors.charcoal}
+              onPress={()=>{
+                if (Platform.OS == "web"){
+                  this.props.history.goBack()
+                }else{
+                  this.props.navigation.goBack()
+                }
+              }}
+            />
           </View>
-          <RecyclerListView 
-            layoutProvider={this._layoutProvider} 
-            dataProvider={this.state.dataProvider} 
-            rowRenderer={this._rowRenderer.bind(this)} />
         </View>
       </View>
     )
@@ -97,7 +124,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    todoAdd:(title) => dispatch(TodoActions.todoAdd(title))
+    todoAdd:(title) => dispatch(TodoActions.todoAdd(title)),
+    todoChange:(id, diff) => dispatch(TodoActions.todoChange(id, diff)),
+    todoDelete:(id) => dispatch(TodoActions.todoDelete(id)),
   }
 }
 

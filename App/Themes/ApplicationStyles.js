@@ -46,7 +46,6 @@ const ApplicationStyles = {
       color: Colors.text
     },
     groupContainer: {
-      margin: Metrics.smallMargin,
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center'
