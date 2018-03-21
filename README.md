@@ -10,7 +10,7 @@ You need to create Platform codes. However, [react-navigation](https://github.co
 
 [![https://gyazo.com/1936da1eb17fa6769f6eaaf463614f5d](https://i.gyazo.com/1936da1eb17fa6769f6eaaf463614f5d.gif)](https://gyazo.com/1936da1eb17fa6769f6eaaf463614f5d)
 
-And it seems to be different from `react-native` and `react-native-web` design. So, you should create components manually.
+And it seems to be different between `react-native` and `react-native-web` design. So, you should create components manually.
 
 **You should create shared Components by [react-primitives](https://github.com/lelandrichardson/react-primitives)**
 
