@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, KeyboardAvoidingView } from 'react-native'
+import { ScrollView, Text, KeyboardAvoidingView, View, Button, Platform } from 'react-native'
 import { connect } from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
@@ -10,11 +10,26 @@ import styles from './Styles/AboutScreenStyle'
 class AboutScreen extends Component {
   render () {
     return (
-      <ScrollView style={styles.container}>
-        <KeyboardAvoidingView behavior='position'>
-          <Text>AboutScreen</Text>
-        </KeyboardAvoidingView>
-      </ScrollView>
+      <View style={styles.mainContainer}>
+        <View style={styles.container}>
+        <View style={styles.section} >
+          <KeyboardAvoidingView behavior='position'>
+            <Text style={styles.sectionText}>AboutScreen</Text>
+            <Button
+                title="Go Back"
+                color="#841584"
+                onPress={()=>{
+                  if (Platform.OS == "web"){
+                    this.props.history.goBack()
+                  }else{
+                    this.props.navigation.goBack()
+                  }
+                }}
+              />
+          </KeyboardAvoidingView>
+          </View>
+        </View>
+      </View>
     )
   }
 }
