@@ -25,8 +25,8 @@
     "next:dev": "cd web && next",
     "next:build": "cd web && next build",
     "next:start": "cd web && next start",
-    "webpack:dev": "webpack-dev-server -d  --mode development --config web/webpack.config.js --inline --hot --colors",
-    "webpack:build": "webpack --mode production --config web/webpack.config.js"
+    "webpack:dev": "NODE_ENV=development webpack-dev-server -d  --config web/webpack.config.js --inline --hot --colors",
+    "webpack:build": "NODE_ENV=production webpack --config web/webpack.config.js"
   },
   "dependencies": {
     "apisauce": "^0.14.2",
@@ -60,6 +60,7 @@
     "@storybook/addon-storyshots": "^3.2.16",
     "@storybook/addons": "^3.2.16",
     "@storybook/channels": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "@storybook/react-native": "^3.2.16",
     "babel-core": "6.26.0",
     "babel-eslint": "7.1.1",
@@ -85,9 +86,8 @@
     "snazzy": "^7.1.1",
     "standard": "10.0.2",
     "url-loader": "^1.0.1",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack": "3.11.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "jest": {
     "testMatch": [

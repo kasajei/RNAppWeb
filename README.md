@@ -46,4 +46,11 @@ These also are different design between App and Web because of `react-native` an
 
 ## Test
 
-* `npm run test:watch TodoReduxTest`
+* Test All: `npm run test:watch TodoReduxTest`
+* Test Single file `npm run test:watch TodoReduxTest`
+
+## Storybook
+
+**We use stroybook for sharing UI Components**
+
+* `npm run storybook`
