@@ -22,6 +22,12 @@ And it seems to be different between `react-native` and `react-native-web` desig
 
 These also are different design between App and Web because of `react-native` and `react-native-web` components differances.
 
+**Storybook work**
+
+[![https://gyazo.com/baa1dcdbf3314756e5c2aae2dd95f287](https://i.gyazo.com/baa1dcdbf3314756e5c2aae2dd95f287.png)](https://gyazo.com/baa1dcdbf3314756e5c2aae2dd95f287)
+
+My settings is for `@storybook/react`, so this component is `react-native-web` or `react-primitives`.
+
 ## :arrow_up: How to Setup
 
 **Step 1:** git clone this repo:
@@ -53,4 +59,16 @@ These also are different design between App and Web because of `react-native` an
 
 **We use stroybook for sharing UI Components**
 
+We want to share UI Components between RN and RNW. And also between Engineer and Designer.
+So, I recommend to use Storybook.
+
+If you want to share to Sketch, you write sharing components with [react-primitives](https://github.com/lelandrichardson/react-primitives).
+
+My settings is for `@storybook/react`. So, Storybook of this settings didn't use for RN components.
+If you want to show, you should set for `@storybok/react-native`.
+
+This setting is searching `App/Componets` folder. 
+If you want to configure settings, you should see `.storybook` and `storybook` folders.
+
 * `npm run storybook`
+* http://localhost:6006

@@ -17,7 +17,7 @@
     "android:devices": "$ANDROID_HOME/platform-tools/adb devices",
     "android:logcat": "$ANDROID_HOME/platform-tools/adb logcat *:S ReactNative:V ReactNativeJS:V",
     "android:shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
-    "storybook": "storybook start -p 7007",
+    "storybook": "start-storybook -p 6006",
     "lint": "standard --verbose | snazzy",
     "lintdiff": "git diff --name-only --cached --relative | grep '\\.js$' | xargs standard | snazzy",
     "fixcode": "standard --fix",
@@ -26,7 +26,8 @@
     "next:build": "cd web && next build",
     "next:start": "cd web && next start",
     "webpack:dev": "NODE_ENV=development webpack-dev-server -d  --config web/webpack.config.js --inline --hot --colors",
-    "webpack:build": "NODE_ENV=production webpack --config web/webpack.config.js"
+    "webpack:build": "NODE_ENV=production webpack --config web/webpack.config.js",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "apisauce": "^0.14.2",
@@ -58,9 +59,9 @@
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.2.16",
-    "@storybook/addons": "^3.2.16",
+    "@storybook/addons": "^3.3.15",
     "@storybook/channels": "^3.2.16",
-    "@storybook/react": "^3.2.16",
+    "@storybook/react": "^3.3.15",
     "@storybook/react-native": "^3.2.16",
     "babel-core": "6.26.0",
     "babel-eslint": "7.1.1",
@@ -87,7 +88,9 @@
     "standard": "10.0.2",
     "url-loader": "^1.0.1",
     "webpack": "3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^2.11.1",
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15"
   },
   "jest": {
     "testMatch": [
