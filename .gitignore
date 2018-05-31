@@ -60,3 +60,5 @@ buck-out/
 .env
 /web/dist/images
 /web/dist/bundle.web.js
+# Bundle artifact
+*.jsbundle
